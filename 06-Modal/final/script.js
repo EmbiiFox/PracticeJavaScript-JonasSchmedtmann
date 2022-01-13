@@ -1,8 +1,10 @@
 'use strict';
-
-const modal = document.querySelector('.modal');
-const overlay = document.querySelector('.overlay');
-const btnCloseModal = document.querySelector('.close-modal');
+var getEle = function (selector) {
+  return document.querySelector(selector);
+};
+const modal = getEle('.modal');
+const overlay = getEle('.overlay');
+const btnCloseModal = getEle('.close-modal');
 const btnsOpenModal = document.querySelectorAll('.show-modal');
 
 const openModal = function () {
