@@ -58,4 +58,15 @@ const nairubi = {
 nairubi.calcAge();
 // console.log(this.firstName)
 // nairubi.greet();
-// nairubi.greeting();
+// nairubi.greeting(); 
+
+
+const me = {
+    name: "CEO",
+    age: 23,
+}
+const friend = me;
+console.log(friend);
+friend.age = 24;
+console.log('Friend', friend)
+console.log('Me', me)
