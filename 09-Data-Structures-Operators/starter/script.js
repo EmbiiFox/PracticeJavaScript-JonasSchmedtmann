@@ -29,15 +29,74 @@ const restaurant = {
       close: 24,
     },
   },
+  orderDelivery: function ({
+    starterIndex,
+    mainIndex,
+    time,
+    address
+  }) {
+    console.log(`Order received ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`)
+  }
 };
+restaurant.orderDelivery({
+  time: '22:30',
+  address: 'TMT17',
+  mainIndex: 2,
+  starterIndex: 1,
+});
 
-const arr = [2, 3, 4];
-const a = arr[0];
-const b = arr[1];
-const c = arr[2];
+//DESTRUCTURING OBJECT
+const {
+  name,
+  openingHours,
+  categories
+} = restaurant;
+console.log(name, openingHours, categories);
+
+const {
+  name: restaurantName,
+  openingHours: hours,
+  categories: tags
+} = restaurant;
+console.log(restaurantName, hours, tags);
+
+//default values
+const {
+  menu = [], starterMenu: starters = []
+} = restaurant;
+console.log(menu, starters);
+
+//mutating variables
+let a = 111;
+let b = 222;
+const obj = {
+  a: 13,
+  b: 12,
+  c: 2000
+};
+({
+  a,
+  b
+} = obj);
+console.log(a, b);
+//nested object 
+const {
+  fri: {
+    open: o,
+    close: c
+  },
+} = openingHours;
+console.log(o, c)
+
+
+
+// const arr = [2, 3, 4];
+// const a = arr[0];
+// const b = arr[1];
+// const c = arr[2];
 
 //Destructuring
-const [x, y, z] = arr;
+// const [x, y, z] = arr;
 // console.log(a, b, c)
 // console.log(x, y, z)
 
@@ -49,16 +108,11 @@ const [x, y, z] = arr;
 
 
 const [starter, main] = restaurant.order(1, 2);
-console.log(starter, main)
+// console.log(starter, main)
 // console.log(restaurant.order(1, 2));
 
-const nestedArr = [8, 4, [5, 6], 8];
-const [i, , j] = nestedArr
-console.log(i, j)
-const [l, , [m, n]] = nestedArr
-console.log(l, m, n)
-
-
-
-//DESTRUCTURING OBJECT
-const {}
+// const nestedArr = [8, 4, [5, 6], 8];
+// const [i, , j] = nestedArr
+// console.log(i, j)
+// const [l, , [m, n]] = nestedArr
+// console.log(l, m, n)
