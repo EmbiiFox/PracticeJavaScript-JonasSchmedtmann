@@ -36,6 +36,9 @@ const restaurant = {
     address
   }) {
     console.log(`Order received ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`)
+  },
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(`Here is your delicous pasta with ${ing1}, ${ing2} and ${ing3}`)
   }
 };
 restaurant.orderDelivery({
@@ -45,48 +48,69 @@ restaurant.orderDelivery({
   starterIndex: 1,
 });
 
-//DESTRUCTURING OBJECT
-const {
-  name,
-  openingHours,
-  categories
-} = restaurant;
-console.log(name, openingHours, categories);
+const arr = [7, 9, 11];
+const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
+console.log(badNewArr)
 
-const {
-  name: restaurantName,
-  openingHours: hours,
-  categories: tags
-} = restaurant;
-console.log(restaurantName, hours, tags);
+const newArr = [1, 2, ...arr]
+console.log(newArr)
 
-//default values
-const {
-  menu = [], starterMenu: starters = []
-} = restaurant;
-console.log(menu, starters);
+// const ingredients = [prompt("Let's make pasta with Ingredient 1?"), prompt("Ingredient 2?"), prompt("Ingredient 3?")];
+// console.log(ingredients);
+// // restaurant.orderPasta(ingredients[0], ingredients[1], ingredients[2], ingredients[3])
+// restaurant.orderPasta(...ingredients);
+
+//Objects 
+const newRestaurant = {
+  ...restaurant,
+  founder: "embi",
+  foundedIn: 2023
+}
+console.log(newRestaurant)
+
+
+// //DESTRUCTURING OBJECT
+// const {
+//   name,
+//   openingHours,
+//   categories
+// } = restaurant;
+// console.log(name, openingHours, categories);
+
+// const {
+//   name: restaurantName,
+//   openingHours: hours,
+//   categories: tags
+// } = restaurant;
+// console.log(restaurantName, hours, tags);
+
+// //default values
+// const {
+//   menu = [], starterMenu: starters = []
+// } = restaurant;
+// console.log(menu, starters);
 
 //mutating variables
-let a = 111;
-let b = 222;
-const obj = {
-  a: 13,
-  b: 12,
-  c: 2000
-};
-({
-  a,
-  b
-} = obj);
-console.log(a, b);
-//nested object 
-const {
-  fri: {
-    open: o,
-    close: c
-  },
-} = openingHours;
-console.log(o, c)
+// let a = 111;
+// let b = 222;
+// const obj = {
+//   a: 13,
+//   b: 12,
+//   c: 2000
+// };
+// ({
+//   a,
+//   b
+// } = obj);
+// console.log(a, b);
+// //nested object 
+// const {
+//   fri: {
+//     open: o,
+//     close: c
+//   },
+// } = openingHours;
+// console.log(o, c)
 
 
 
@@ -107,7 +131,7 @@ console.log(o, c)
 // console.log(main, secondary);
 
 
-const [starter, main] = restaurant.order(1, 2);
+// const [starter, main] = restaurant.order(1, 2);
 // console.log(starter, main)
 // console.log(restaurant.order(1, 2));
 
