@@ -39,6 +39,11 @@ const restaurant = {
   },
   orderPasta: function (ing1, ing2, ing3) {
     console.log(`Here is your delicous pasta with ${ing1}, ${ing2} and ${ing3}`)
+  },
+  orderPizza: function (mainIngredient, ...otherIngredients) {
+    console.log(mainIngredient);
+    console.log(otherIngredients)
+
   }
 };
 restaurant.orderDelivery({
@@ -48,12 +53,12 @@ restaurant.orderDelivery({
   starterIndex: 1,
 });
 
-const arr = [7, 9, 11];
-const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
-console.log(badNewArr)
+// const arr = [7, 9, 11];
+// const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
+// console.log(badNewArr)
 
-const newArr = [1, 2, ...arr]
-console.log(newArr)
+// const newArr = [1, 2, ...arr]
+// console.log(newArr)
 
 // const ingredients = [prompt("Let's make pasta with Ingredient 1?"), prompt("Ingredient 2?"), prompt("Ingredient 3?")];
 // console.log(ingredients);
@@ -68,6 +73,22 @@ const newRestaurant = {
 }
 console.log(newRestaurant)
 
+const add = function (...numbers) {
+  // console.log(numbers)
+  let sum = 0
+  for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+  }
+  console.log(sum)
+}
+add(2, 3);
+add(2, 4, 4, 1, 5, 23, 5);
+
+const x = [23, 5, 7]
+add(...x);
+
+restaurant.orderPizza('mushrooms', 'onion', 'peas');
+restaurant.orderPizza('mushrooms');
 
 // //DESTRUCTURING OBJECT
 // const {
