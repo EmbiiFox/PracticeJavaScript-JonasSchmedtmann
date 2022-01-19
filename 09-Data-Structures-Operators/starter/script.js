@@ -403,4 +403,29 @@ console.log(new Set(['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter']).s
 
 
 console.log('____________________________MAP_________________');
+const rest =new Map();
+rest.set('name','Nairubi cẩm tú');
+rest.set(1,'Vietnam, Thailand');
+console.log(rest.set(2,'China, Korea'));
+const test=rest
+  .set('categories',['Italian', 'Pizzeria', 'Vegetarian', 'Organic'])
+  .set('open',11).set('close',23)
+  .set(true,'OPEN')
+  .set(false,'CLOSE');
+console.log(test);
+console.log(rest.get(true))
 
+
+const time=21;
+console.log( rest.get(time>rest.get('open')&&time<rest.get('close')?false:true));
+console.log(rest.has('categories'));
+rest.delete(2);
+console.log(rest);
+console.log(rest.size);
+
+const arr=[1,2];
+rest.set(arr,"Test");
+rest.set(document.querySelector('h1'),'Heading')
+console.log(rest);
+console.log(rest.size);
+console.log(rest.get(arr));
