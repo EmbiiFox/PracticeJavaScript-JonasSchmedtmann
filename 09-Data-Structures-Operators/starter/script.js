@@ -384,3 +384,23 @@ for(const [team, odd] of Object.entries(game.odds)) {
 }
 
 console.log('__________________SET___________________')
+const ordersSet= new Set(['Pasta','Pizza','Milk tea','Pizza','Green tea']);
+console.log(new Set('1312'));
+console.log(ordersSet.size);
+console.log(ordersSet.has('Bread'));
+console.log(ordersSet.add('Tomatoes'))
+// console.log(ordersSet.delete('Pizza'))
+// console.log(ordersSet.clear())
+console.log(ordersSet);
+for(const order of ordersSet) {
+  console.log(order);
+}
+//Example: 
+const staff=['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+const staffUnique= [...new Set(staff)];
+console.log(staffUnique);
+console.log(new Set(['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter']).size)
+
+
+console.log('____________________________MAP_________________');
+
