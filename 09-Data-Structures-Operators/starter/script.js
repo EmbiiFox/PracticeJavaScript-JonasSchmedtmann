@@ -505,5 +505,144 @@ console.log(`"An event happened, on average, every ${time/gameEvents.size} minut
 for(const [min,event] of gameEvents){
   const half=min<=45?`[FIRST HALF]`:`[SECOND HALF]`
   console.log(`${half} ${min}: ${event}`);
-
 }
+
+// console.log("________________WORKING IN STRING____________");
+// const airline="Vietnam airliner";
+// const plane="A79";
+// console.log(plane[0])
+// console.log(plane[1])
+// console.log( typeof plane[2])
+// console.log(airline.length)
+
+// console.log(airline.indexOf('r'));
+// console.log(airline.lastIndexOf('r'));
+// console.log(airline.slice(4))
+
+// console.log('Lower case:',airline.toLowerCase());
+// console.log('Upper case:',airline.toUpperCase());
+
+//Fix capitalization in name
+// const passenger='naIRuBi';
+// const passengerLower=passenger.toLowerCase();
+// const passengerCorrect=passengerLower[0].toUpperCase()+ passengerLower.slice(1);
+// console.log(passengerCorrect);
+
+//Comparing emails
+// const email='nairubi@gmail.com';
+// const loginEmail='Nairubi@Gmail.Com \n';
+// const emailLower=loginEmail.toLowerCase();
+// const trimmedEmail=emailLower.trim();
+// console.log(trimmedEmail);
+
+// const normalizedEmail =loginEmail.toLowerCase().trim();
+// console.log(normalizedEmail);
+
+// replacing
+// const priceVN='23.000vnd';
+// const priceUS=priceVN.replace('vnd','$').replace('.',',');
+// console.log(priceUS);
+
+// const announcement ='All passengers come to barding door 21. Boarding door 21!';
+// console.log(announcement.replace('door','gate'));
+// console.log(announcement.replace(/door/g,'gate'));
+
+//Booleans
+// const planet='A320embi';
+// console.log(planet.includes('embi'));
+//practice exercise
+// const checkBaggage=function(items){
+//   const baggage=items.toLowerCase();
+//   if(baggage.includes('knife')|| baggage.includes('gun')){
+//     console.log('You are not allowed on board');
+//   }else{
+//     console.log('Welcome aboard'); 
+//   } 
+// }
+// checkBaggage('I have a laptop, some foof and a pocket knife');
+// checkBaggage('Socks and camera');
+// checkBaggage('Got some snacks and a gun for protection');
+
+const capitalizeName=function(name){
+  console.log(name);
+  const names=name.split(' ');
+  const namesUpper=[]
+  for(const n of names){
+    // namesUpper.push(n[0].toUpperCase()+n.slice(1)); 
+    namesUpper.push(n.replace(n[0],n[0].toUpperCase()))
+  }
+  console.log(namesUpper.join(' ')); 
+  
+}
+capitalizeName('jessica and smith davis');
+capitalizeName('nairubi cam tu');
+
+//Padding b
+const message='Go to gate 21'
+console.log(message.padStart(21,'+').padEnd(35,'+'));
+console.log(message.padStart(29,'+'));
+
+const maskCreditCard=function(number){
+  const str=number+'';
+  const last =str.slice(-4);
+  return last.padStart(str.length,'*')
+}
+console.log(maskCreditCard(434721847623847));
+console.log(maskCreditCard('64347263487242'));
+//repeat
+const message2='Bad weather ...All departues delayed...'
+console.log(message2.repeat(2));
+
+const planeInLine=function(n){
+  console.log(`There are ${n} planes in line ${'✈'.repeat(n)}`);
+}
+planeInLine(5);
+planeInLine(13);
+
+
+console.log('_____________________CODE CHALLENGE #4');
+
+/* 
+Write a program that receives a list of variable names written in underscore_case and convert them to camelCase.
+
+The input will come from a textarea inserted into the DOM (see code below), and conversion will happen when the button is pressed.
+
+THIS TEST DATA (pasted to textarea)
+underscore_case
+ first_name
+Some_Variable 
+  calculate_AGE
+delayed_departure
+
+SHOULD PRODUCE THIS OUTPUT (5 separate console.log outputs)
+underscoreCase      ✅
+firstName           ✅✅
+someVariable        ✅✅✅
+calculateAge        ✅✅✅✅
+delayedDeparture    ✅✅✅✅✅
+
+HINT 1: Remember which character defines a new line in the textarea 😉
+HINT 2: The solution only needs to work for a variable made out of 2 words, like a_b
+HINT 3: Start without worrying about the ✅. Tackle that only after you have the variable name conversion working 😉
+HINT 4: This challenge is difficult on purpose, so start watching the solution in case you're stuck. Then pause and continue!
+
+Afterwards, test with your own test data!
+*/
+document.body.append(document.createElement('textarea'));
+document.body.append(document.createElement('button'));
+
+document.querySelector('button').addEventListener('click', function () {
+  const text = document.querySelector('textarea').value;
+  const rows = text.split('\n');
+
+  for (const [i, row] of rows.entries()) {
+    const [first, second] = row.toLowerCase().trim().split('_');
+
+    const output = `${first}${second.replace(
+      second[0],
+      second[0].toUpperCase()
+    )}`;
+    console.log(`${output.padEnd(20)}${'✅'.repeat(i + 1)}`);
+  }
+});
+// console.log(eval(testArr));
