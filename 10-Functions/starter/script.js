@@ -255,23 +255,57 @@ BONUS TEST DATA 2: [1, 5, 3, 9, 6, 1]
 // console.log(notPrivate);
 
 
-console.log('___CLOSURE___');
-const secureBooking=function (){
-    let passengerCount=0;
-    return function(){
-        passengerCount++;
-        console.log(`${passengerCount} passengers`);
-    }
-}
-const booker=secureBooking();
-booker();
-booker();
-booker();
+// console.log('___CLOSURE___');
+// const secureBooking=function (){
+//     let passengerCount=0;
+//     return function(){
+//         passengerCount++;
+//         console.log(`${passengerCount} passengers`);
+//     }
+// }
+// const booker=secureBooking();
+// booker();
+// booker();
+// booker();
+
+console.log('Example 1');
+// let f;
+// const g =function(){
+//     const a=23;
+//     f=function(){
+//         console.log(a*2);
+//     }
+// }
+// g();
+// f();
+// console.dir(f)
+// const h =function(){
+//     const b=777;
+//     f=function(){
+//         console.log(b*2);
+//     }
+// }
+// //Re-assign f function
+// h();
+// f();
+// // console.dir(f)
+// console.log('Example 2');
+// const boardPassengers=function(n,wait){
+//     const perGroup=n/3;
+//     setTimeout(function(){
+//         console.log(`We are boarding all ${n} passengers`);
+//         console.log(`There are 3 group, each with ${perGroup} passengers`);
+//     },wait*1000)
+//     console.log(`Will start boarding in ${wait} seconds`);
+// };
+// const perGroup =1000;
+// boardPassengers(180,3)
 
 
-let f;
-const g =function(){
-    f=function(){
-        console.log(a*2);
-    }
-}
+console.log('____CHALLENGE #2________');
+(function(){
+    const header=document.querySelector('h1');
+    document.querySelector('body').addEventListener('click',function(){
+        header.style.color='blue'
+    })
+})();
