@@ -36,9 +36,21 @@ const account4 = {
 const accounts = [account1, account2, account3, account4];
 
 console.log('COMPUTING USERNAME');
-const user='Nairubi Kha Tu';
-const username=user.toLowerCase().split(' ').map(name=>name[0]);
-console.log(username);
+// const user='Nairubi Kha Tu';
+
+// const createUsernames=function(user){
+//   const username=user.toLowerCase().split(' ').map(name=>name[0]).join('');
+//   // console.log('Username',username);
+//   return username;
+// }
+// console.log(createUsernames('Nairubi Kha Tu'));
+const createUsernames =function(accs){
+  accs.forEach(function(acc){
+    acc.username=acc.owner.toLowerCase().split(' ').map(name=>name[0]).join('');
+  })
+}
+console.log(accounts);
+createUsernames(accounts)
 
 // Elements
 const labelWelcome = document.querySelector('.welcome');
@@ -91,13 +103,13 @@ displayMoments(account1.movements)
 /////////////////////////////////////////////////
 // LECTURES
 
-// const currencies = new Map([
-//   ['USD', 'United States dollar'],
-//   ['EUR', 'Euro'],
-//   ['GBP', 'Pound sterling'],
-// ]);
+const currencies = new Map([
+  ['USD', 'United States dollar'],
+  ['EUR', 'Euro'],
+  ['GBP', 'Pound sterling'],
+]);
 
-// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
 //////////////////////////////////
@@ -192,4 +204,52 @@ displayMoments(account1.movements)
 //   }
 // });
 
+
+
+console.log('FILTER');
+
+//// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+// const deposits=movements.filter(function(mov){
+//   return mov>0
+// })
+// const deposits=movements.filter(mov=>mov>0);
+// // console.log(movements);
+// // console.log(deposits);
+
+// const depositsFor=[];
+// const withdrawsFor = [];
+// for(const mov of movements){
+//   mov>0?depositsFor.push(mov):withdrawsFor.push(mov)
+// }
+// console.log('Other way');
+// const withdraw=movements.filter(mov=>mov<0)
+// console.log(withdraw);
+// console.log(depositsFor);
+// console.log(withdrawsFor);
+
+
+// console.log('REDUCE');
+// console.log(movements);
+// const balance=movements.reduce((acc,cur,i)=> acc + cur,0);
+// console.log(balance);
+
+// let balance2=0;
+// for(const mov of movements){
+//   balance2+=mov;
+// }
+// console.log(balance2);
+// console.log('max value');
+// const max=movements.reduce((acc,mov)=>{
+//   return acc>mov?acc:mov
+// },movements[0])
+// console.log(max);
+
+console.log('CHALLENGE #2');
+const calcAverageHumanAge=function(ages){
+  const humanAge=ages.map(age=>age<=2?2*age:16+age*4);
+  console.log(humanAge);
+  const adults=humanAge.filter(age=>age>=18)
+  console.log(adults);
+}
+calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3])
 
