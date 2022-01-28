@@ -275,4 +275,11 @@ const avg1= calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3])
 const avg2=calcAverageHumanAge([16,6,10,5,6,1,4]);
 console.log(avg1,avg2);
 
-console.log();
+console.log('FIND METHOD');
+const firstWithdrawal=movements.find(mov=>mov<0);
+console.log(firstWithdrawal);
+console.log(accounts);
+const account =accounts.find(acc=>acc.owner==='Jessica Davis');
+console.log(account);
+
+console.log('IMPLEMENT LOGIN');
