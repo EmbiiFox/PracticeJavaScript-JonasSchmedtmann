@@ -283,3 +283,17 @@ const account =accounts.find(acc=>acc.owner==='Jessica Davis');
 console.log(account);
 
 console.log('IMPLEMENT LOGIN');
+let currentAccount;
+btnLogin.addEventListener('click',function(e){
+  //Prevent form from submitting again
+  e.preventDefault();
+  // console.log('LOGIN');
+  currentAccount=accounts.find(acc=>acc.owner===inputLoginUsername.value)
+  console.log('current account',currentAccount);
+  // currentAccount?.pin===+inputLoginPin.value?console.log('LOGIN'):console.log('FAIL');
+  if(currentAccount?.pin===Number(inputLoginPin.value)){
+    console.log('LOGIN');
+    labelWelcome.textContent =`Welcome back, ${currentAccount.owner.split(' ')[0]}`;
+    containerApp.style.opacity =1;
+  }
+})
