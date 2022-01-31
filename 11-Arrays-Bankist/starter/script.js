@@ -297,3 +297,5 @@ btnLogin.addEventListener('click',function(e){
     containerApp.style.opacity =1;
   }
 })
+
+console.log('FLAT');
