@@ -299,3 +299,34 @@ btnLogin.addEventListener('click',function(e){
 })
 
 console.log('FLAT');
+console.log('FILL');
+console.log(1,2,3,4,5,6,7);
+console.log(new Array(1,2,3,4,5,6,7));
+const x = new Array(7);
+console.log(x);
+console.log(x.map(()=>5));
+console.log(x.fill(1,3,5));
+console.log(x.map(()=>5));
+
+console.log('FROM');
+const y= Array.from({length:7},()=>1);
+console.log(y);
+
+const z=Array.from({length:7}, (_,i)=>i+1);
+console.log(z);
+
+labelBalance.addEventListener('click', function(){
+  const movementsUI=Array.from(document.querySelectorAll('.movements__value'),
+  el=>+el.textContent.replace('€', ''));
+  // console.log(movementsUI.map(el=>el.textContent.replace('€','')));
+  console.log(movementsUI);
+  const movementsUI2=[...document.querySelectorAll('.movements__value')];
+})
+
+console.log('ARRAY METHOD PRACTICE___________________');
+// const bankDepositSum=accounts.map(acc=>acc.movements).flat();
+const bankDepositSum=accounts
+  .flatMap(acc=>acc.movements)
+  .filter(mov=>mov>0)
+  .reduce((sum,cur)=> sum+cur,0 );
+console.log(bankDepositSum);
