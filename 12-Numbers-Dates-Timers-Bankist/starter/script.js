@@ -271,3 +271,30 @@ console.log(Math.ceil(-23.9));
 
 console.log('Rounding decimals');
 console.log((2.7).toFixed(0));
+
+labelBalance.addEventListener('click', function () {
+  console.log('OPERATORS_________________');
+  [...document.querySelectorAll('.movements__row')]
+    .forEach(function(row,i){
+      // 0,2,4,6
+      if(i%2===0){
+        row.style.backgroundColor='orangered';
+      }
+      //0.3.6.9
+      if(i%3===0){
+        row.style.backgroundColor='blue';
+      }
+  });
+})
+
+console.log('Separators');
+const diameter=287_460_000_000;
+console.log(diameter);
+
+console.log('BIG INT');
+console.log(2**54+1);
+console.log(Number.MAX_SAFE_INTEGER);
+console.log(7979797979797979797979797979797979n);
+console.log(BigInt(7979797979));
+const huge=7979797979797979797979797979797979n;
+console.log(huge+' is big');
