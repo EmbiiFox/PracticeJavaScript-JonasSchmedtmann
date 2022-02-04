@@ -298,3 +298,15 @@ console.log(7979797979797979797979797979797979n);
 console.log(BigInt(7979797979));
 const huge=7979797979797979797979797979797979n;
 console.log(huge+' is big');
+
+console.log('Create date');
+const now =new Date();
+console.log(now);
+console.log(new Date('December 13,2000'));
+// console.log(new Date(account1.movementsDates[0]));
+// console.log(new Date(2022,2,14,4,13,));
+console.log(new Date(0));
+
+const future=new Date(2022,14,1,4,15);
+console.log(future);
+console.log(future.getFullYear());
