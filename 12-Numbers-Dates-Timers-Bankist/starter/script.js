@@ -206,7 +206,7 @@ btnTransfer.addEventListener('click', function (e) {
 btnLoan.addEventListener('click', function (e) {
   e.preventDefault();
 
-  const amount = Number(inputLoanAmount.value);
+  const amount = Math.floor(inputLoanAmount.value);
 
   if (amount > 0 && currentAccount.movements.some(mov => mov >= amount * 0.1)) {
     // Add movement
@@ -251,3 +251,23 @@ btnSort.addEventListener('click', function (e) {
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
+console.log(23===23.0);
+console.log('Binary base 2- 01');
+console.log(0.1+0.2==0.3);
+console.log(+'23');
+
+console.log('Math and rounding');
+console.log(Math.sqrt(25));
+console.log(Math.max(23,5,'29'));
+console.log(Math.min(23,5,'29'));
+console.log(Math.PI*Number.parseFloat('10px')**2);
+
+const random =(min,max)=>Math.trunc(Math.random()*(max-min)+1)
+console.log(random(1,10));
+
+console.log(Math.trunc(-23.9));
+console.log(Math.round(-23.5));
+console.log(Math.ceil(-23.9));
+
+console.log('Rounding decimals');
+console.log((2.7).toFixed(0));
