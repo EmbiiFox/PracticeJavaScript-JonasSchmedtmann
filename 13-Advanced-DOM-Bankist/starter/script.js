@@ -29,3 +29,13 @@ document.addEventListener('keydown', function (e) {
     closeModal();
   }
 });
+
+console.log(document.documentElement);
+console.log(document.body);
+console.log(document.head);
+
+document.querySelector('.header');
+const allSections = document.querySelectorAll('.section');
+console.log(allSections);
+
+document.querySelector('.section--1')

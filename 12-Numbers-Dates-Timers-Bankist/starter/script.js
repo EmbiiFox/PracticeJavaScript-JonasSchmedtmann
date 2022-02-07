@@ -154,6 +154,17 @@ const updateUI = function (acc) {
 ///////////////////////////////////////
 // Event handlers
 let currentAccount;
+currentAccount =account1
+updateUI(currentAccount);
+containerApp.style.opacity=1;
+
+const now= new Date();
+const date= now.getDate();
+const month= now.getMonth()+1;
+const year= now.getFullYear();
+const hours= now.getHours();
+const minutes= now.getMinutes();
+labelDate.textContent=`${month}/ ${date}/ ${year} ${hours}: ${minutes}`;
 
 btnLogin.addEventListener('click', function (e) {
   // Prevent form from submitting
@@ -251,62 +262,62 @@ btnSort.addEventListener('click', function (e) {
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
-console.log(23===23.0);
-console.log('Binary base 2- 01');
-console.log(0.1+0.2==0.3);
-console.log(+'23');
+// console.log(23===23.0);
+// console.log('Binary base 2- 01');
+// console.log(0.1+0.2==0.3);
+// console.log(+'23');
 
-console.log('Math and rounding');
-console.log(Math.sqrt(25));
-console.log(Math.max(23,5,'29'));
-console.log(Math.min(23,5,'29'));
-console.log(Math.PI*Number.parseFloat('10px')**2);
+// console.log('Math and rounding');
+// console.log(Math.sqrt(25));
+// console.log(Math.max(23,5,'29'));
+// console.log(Math.min(23,5,'29'));
+// console.log(Math.PI*Number.parseFloat('10px')**2);
 
-const random =(min,max)=>Math.trunc(Math.random()*(max-min)+1)
-console.log(random(1,10));
+// const random =(min,max)=>Math.trunc(Math.random()*(max-min)+1)
+// console.log(random(1,10));
 
-console.log(Math.trunc(-23.9));
-console.log(Math.round(-23.5));
-console.log(Math.ceil(-23.9));
+// console.log(Math.trunc(-23.9));
+// console.log(Math.round(-23.5));
+// console.log(Math.ceil(-23.9));
 
-console.log('Rounding decimals');
-console.log((2.7).toFixed(0));
+// console.log('Rounding decimals');
+// console.log((2.7).toFixed(0));
 
-labelBalance.addEventListener('click', function () {
-  console.log('OPERATORS_________________');
-  [...document.querySelectorAll('.movements__row')]
-    .forEach(function(row,i){
-      // 0,2,4,6
-      if(i%2===0){
-        row.style.backgroundColor='orangered';
-      }
-      //0.3.6.9
-      if(i%3===0){
-        row.style.backgroundColor='blue';
-      }
-  });
-})
+// labelBalance.addEventListener('click', function () {
+//   console.log('OPERATORS_________________');
+//   [...document.querySelectorAll('.movements__row')]
+//     .forEach(function(row,i){
+//       // 0,2,4,6
+//       if(i%2===0){
+//         row.style.backgroundColor='orangered';
+//       }
+//       //0.3.6.9
+//       if(i%3===0){
+//         row.style.backgroundColor='blue';
+//       }
+//   });
+// })
 
-console.log('Separators');
-const diameter=287_460_000_000;
-console.log(diameter);
+// console.log('Separators');
+// const diameter=287_460_000_000;
+// console.log(diameter);
 
-console.log('BIG INT');
-console.log(2**54+1);
-console.log(Number.MAX_SAFE_INTEGER);
-console.log(7979797979797979797979797979797979n);
-console.log(BigInt(7979797979));
-const huge=7979797979797979797979797979797979n;
-console.log(huge+' is big');
+// console.log('BIG INT');
+// console.log(2**54+1);
+// console.log(Number.MAX_SAFE_INTEGER);
+// console.log(7979797979797979797979797979797979n);
+// console.log(BigInt(7979797979));
+// const huge=7979797979797979797979797979797979n;
+// console.log(huge+' is big');
 
-console.log('Create date');
-const now =new Date();
-console.log(now);
-console.log(new Date('December 13,2000'));
-// console.log(new Date(account1.movementsDates[0]));
-// console.log(new Date(2022,2,14,4,13,));
-console.log(new Date(0));
+// console.log('Create date');
+// const now =new Date();
+// console.log(now);
+// console.log(new Date('December 13,2000'));
+// // console.log(new Date(account1.movementsDates[0]));
+// // console.log(new Date(2022,2,14,4,13,));
+// console.log(new Date(0));
 
-const future=new Date(2022,14,1,4,15);
-console.log(future);
-console.log(future.getFullYear());
+// const future=new Date(2022,14,1,4,15);
+// console.log(future);
+// console.log(future.getFullYear());
