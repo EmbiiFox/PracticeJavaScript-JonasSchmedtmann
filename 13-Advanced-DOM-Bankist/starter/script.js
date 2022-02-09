@@ -38,4 +38,8 @@ document.querySelector('.header');
 const allSections = document.querySelectorAll('.section');
 console.log(allSections);
 
-document.querySelector('.section--1')
+document.getElementById('section--1')
+const allButtons = document.getElementsByTagName('button');
+console.log(allButtons);
+
+console.log(document.getElementsByClassName('btn')); 
